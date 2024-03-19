@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import TypewriterEffect from "./typewriter_effect";
 import AppButton from "../components/app_button";
-import { APP_NAME } from "../../utils/constant";
+import { APP_NAME } from "../../utils/constants";
 // import { motion } from "framer-motion";
 // import LampContainer from "./lamp_container";
 
@@ -34,8 +34,8 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
       </p>
       <TypewriterEffect words={words} className="my-8" />
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-10">
-        <AppButton label="Signup" href="/signup" variant="sketch" />
-        {/* <AppButton label="Login" href="/login" variant="moving-border" /> */}
+        <AppButton label="Signup" href="/signup" variant="gradient" />
+        <AppButton label="Login" href="/login" variant="moving-border" />
       </div>
     </div>
     // <LampContainer>
