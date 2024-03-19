@@ -1,7 +1,14 @@
 import "./App.css";
+// import AppButton from "./shared/components/app_button";
+// import LampContainer from "./shared/landing-page/lamp_container";
+import LandingPage from "./shared/landing-page/landing_page";
 
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <>
+      <LandingPage />
+    </>
+  );
 }
 
 export default App;
