@@ -1,6 +1,6 @@
 import { FunctionComponent, useEffect } from "react";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
-import { cn } from "../../utils/cn";
+import { cn } from "../utils/cn";
 
 interface TypewriterEffectProps {
   words: {
