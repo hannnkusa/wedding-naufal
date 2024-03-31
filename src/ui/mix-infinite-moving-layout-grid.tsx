@@ -14,7 +14,7 @@ export const MixInfiniteMovingLayoutGrid = ({
   cards,
   direction = "left",
   speed = "fast",
-  pauseOnHover = true,
+  pauseOnHover = false,
   className,
 }: {
   cards: Card[];
@@ -93,19 +93,19 @@ export const MixInfiniteMovingLayoutGrid = ({
   };
 
   return (
-    <div>
+    <div className="w-full flex items-center">
       {/* Start Infinite Div */}
       <div
         ref={containerRef}
         className={cn(
-          "scroller relative z-20  max-w-md overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+          "scroller relative z-20  max-w-md overflow-hidden items-center",
           className
         )}
       >
         <div
           ref={scrollerRef}
           className={cn(
-            "flex min-w-full shrink-0 gap-64 w-max flex-nowrap",
+            "flex min-w-full shrink-0 gap-64 w-max flex-nowrap items-center",
             start && "animate-scroll ",
             pauseOnHover && "hover:[animation-play-state:paused]",
             selected?.id && "[animation-play-state:paused]"
@@ -116,7 +116,7 @@ export const MixInfiniteMovingLayoutGrid = ({
           {/* Start Layout Grid */}
           <div className="overflow-visible w-full max-w-md">
             {/* <div className="w-[48rem] h-screen grid md:grid-cols-3"> */}
-            <div className="w-[48rem] h-screen p-10 grid grid-cols-1 md:grid-cols-3 mx-auto gap-4 ">
+            <div className="w-[48rem] h-screen p-10 grid grid-cols-3 mx-auto gap-4 ">
               {cards.map((card, i) => (
                 <div key={i} className={cn(card.className, "")}>
                   <motion.div
@@ -142,7 +142,7 @@ export const MixInfiniteMovingLayoutGrid = ({
           {/* Start Layout Grid */}
           <div className="overflow-visible w-full max-w-md">
             {/* <div className="w-[48rem] h-screen grid md:grid-cols-3"> */}
-            <div className="w-[48rem] h-screen p-10 grid grid-cols-1 md:grid-cols-3 mx-auto gap-4 ">
+            <div className="w-[48rem] h-screen p-10 grid grid-cols-3 mx-auto gap-4 ">
               {cards.map((card, i) => (
                 <div key={i} className={cn(card.className, "")}>
                   <motion.div
@@ -173,10 +173,10 @@ export const MixInfiniteMovingLayoutGrid = ({
       <motion.div
         onClick={handleOutsideClick}
         className={cn(
-          "absolute h-full w-full left-0 top-0 bg-black opacity-0 z-[80]",
+          "absolute h-full w-full left-0 top-0 bg-black opacity-50 z-[30]",
           selected?.id ? "pointer-events-auto" : "pointer-events-none"
         )}
-        animate={{ opacity: selected?.id ? 0.1 : 0 }}
+        animate={{ opacity: selected?.id ? 0.6 : 0 }}
       />
     </div>
   );
@@ -192,7 +192,7 @@ const BlurImage = ({ card }: { card: Card }) => {
       onLoad={() => setLoaded(true)}
       className={cn(
         "object-cover object-top absolute inset-0 h-full w-full transition duration-200",
-        loaded ? "blur-none" : "blur-md"
+        loaded ? "blur-none" : "blur-lg"
       )}
       alt="thumbnail"
     />
@@ -213,7 +213,7 @@ const SelectedCard = ({
         selected?.className,
         "relative overflow-hidden",
         selected?.id
-          ? "rounded-lg cursor-pointer absolute inset-0 h-3/4 w-full md:w-3/4 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
+          ? "rounded-lg cursor-pointer absolute inset-0 h-3/4 w-3/4 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
           : lastSelected?.id === selected?.id
           ? "z-40 bg-white rounded-xl h-full w-full"
           : "bg-white rounded-xl h-full w-full"
