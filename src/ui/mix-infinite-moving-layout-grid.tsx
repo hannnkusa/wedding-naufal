@@ -98,7 +98,7 @@ export const MixInfiniteMovingLayoutGrid = ({
       <div
         ref={containerRef}
         className={cn(
-          "scroller relative z-20  max-w-md overflow-hidden items-center",
+          "scroller relative z-20 max-w-md overflow-hidden items-center",
           className
         )}
       >
@@ -115,7 +115,6 @@ export const MixInfiniteMovingLayoutGrid = ({
 
           {/* Start Layout Grid */}
           <div className="overflow-visible w-full max-w-md">
-            {/* <div className="w-[48rem] h-screen grid md:grid-cols-3"> */}
             <div className="w-[48rem] h-screen p-10 grid grid-cols-3 mx-auto gap-4 ">
               {cards.map((card, i) => (
                 <div key={i} className={cn(card.className, "")}>
@@ -141,7 +140,6 @@ export const MixInfiniteMovingLayoutGrid = ({
           {/* End Layout Grid */}
           {/* Start Layout Grid */}
           <div className="overflow-visible w-full max-w-md">
-            {/* <div className="w-[48rem] h-screen grid md:grid-cols-3"> */}
             <div className="w-[48rem] h-screen p-10 grid grid-cols-3 mx-auto gap-4 ">
               {cards.map((card, i) => (
                 <div key={i} className={cn(card.className, "")}>
