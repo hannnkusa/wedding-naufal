@@ -15,6 +15,8 @@
     "@radix-ui/react-label": "^2.0.2",
     "@tabler/icons-react": "^3.1.0",
     "@tanstack/react-query": "^5.28.4",
+    "@types/aos": "^3.0.7",
+    "aos": "^2.3.4",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.14",
     "fullpage.js": "^4.0.22",

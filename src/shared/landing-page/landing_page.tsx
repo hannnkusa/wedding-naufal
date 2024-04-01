@@ -1,11 +1,13 @@
-import { FunctionComponent, useState } from "react";
-import { motion } from "framer-motion";
+import { FunctionComponent, useState, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { TextGenerateEffect } from "../../ui/text-generate-effect";
 import graph from "/1.jpeg";
 import graph2 from "/2.jpeg";
 import { MixInfiniteMovingLayoutGrid } from "../../ui/mix-infinite-moving-layout-grid";
-import { TracingBeam } from "../../ui/tracing-beam";
 import Countdown from "react-countdown";
+import { SinglePhoto } from "../components/single_photo";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const words = "Family and Friends";
 
@@ -65,6 +67,10 @@ interface LandingPageProps {}
 const LandingPage: FunctionComponent<LandingPageProps> = () => {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   const togglePlay = () => {
     const audioElement = document.getElementById("audio") as HTMLAudioElement;
@@ -146,7 +152,36 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
               </div>
             </div>
           </div>
-          <div className="pt-8 w-full">
+          <div className="max-w-md relative">
+            <div className="m-auto left-0 right-0 mt-8 -mb-16 py-8 px-12">
+              <div className="minimalistMagazine_openingContainer__9u6yY __className_44b83f">
+                <div className="w-full flex flex-col gap-16 items-center justify-center">
+                  <div className="text-center text-3xl text-darker-grey">
+                    QS. Ar-Rum : 21
+                  </div>
+                  <div className="text-center text-lg text-darker-grey">
+                    "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia
+                    menciptakan pasangan-pasangan untukmu dari jenismu sendiri,
+                    agar kamu cenderung dan merasa tenteram kepadanya, dan Dia
+                    menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada
+                    yang demikian itu benar-benar terdapat tanda-tanda
+                    (kebesaran Allah) bagi kaum yang berpikir."
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <SinglePhoto gender="wanita" ig="isi aja" name="wanita" />
+          <div className="absolute m-auto left-0 right-0 mt-14">
+            <div className="text-6xl font-great-vibes text-center">&</div>
+          </div>
+          <SinglePhoto gender="pria" ig="isi aja" name="Naufal Alghifary" />
+          <div
+            className="pt-8 w-full"
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="800"
+          >
             <Countdown
               date={new Date(2024, 3, 28)}
               renderer={(props) => (
@@ -269,7 +304,7 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
               </div>
             </div>
           </div>
-          <div className="relative w-full items-center">
+          <div className="relative items-center">
             <div className="text-2xl font-lagunac text-center">
               <div>GALLERY</div>
             </div>

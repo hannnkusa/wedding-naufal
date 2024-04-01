@@ -5,6 +5,9 @@ const config: Config = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
+    fontFamily: {
+      "great-vibes": ["Great Vibes", "cursive"],
+    },
     extend: {
       animation: {
         shimmer: "shimmer 2s linear infinite",
