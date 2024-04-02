@@ -90,7 +90,7 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
   };
 
   return (
-    <div className="flex min-h-screen min-w-screen flex-col items-center justify-between overflow-hidden shadow-md">
+    <div className="flex min-h-screen min-w-screen flex-col items-center justify-between overflow-hidden shadow-md __className_44b83f">
       {!isUnlocked ? (
         <div className="bg-white fixed h-screen w-screen top-0 left-0 z-[112] flex justify-center items-center __className_81562d">
           <div className="w-full h-screen max-w-md bg-beige relative">
@@ -99,7 +99,7 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
               <img
                 src={graph}
                 alt="Logo"
-                className="absolute h-full w-full top-0 left-0 z-[68] object-cover"
+                className="absolute top-0 left-0 object-cover h-screen w-screen object-right"
               />
               <div className="absolute z-[70] bottom-0 left-0 pb-32 w-full text-white">
                 <div className="w-full text-sm font-normal text-center overflow-hidden font-commuters-sans">
@@ -110,7 +110,7 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
                 </div>
                 <div className="text-white cursor-pointer overflow-hidden flex items-center justify-center">
                   <button
-                    className="px-4 py-2 backdrop-blur-sm border border-white rounded-md hover:shadow-[0px_0px_4px_4px_rgba(0,0,0,0.1)] bg-white/[0.2] text-sm transition duration-200 text-white"
+                    className="px-4 py-2 backdrop-blur-sm border border-white rounded-md hover:shadow-[0px_0px_4px_4px_rgba(0,0,0,0.1)] text-sm transition duration-200 text-white"
                     onClick={handleUnlock}
                   >
                     OPEN INVITATION
@@ -126,56 +126,71 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="h-screen relative antialiased">
-            <div className="flex flex-col items-center justify-center h-[40rem]">
-              <img
-                src={graph2}
-                alt="Logo"
-                className="absolute h-full w-full top-0 left-0 z-[68] object-cover origin-right"
-              />
-              <div className="absolute z-[70] top-0 left-0 pt-24 w-full text-white">
-                <div className="w-full text-sm font-normal text-center overflow-hidden font-commuters-sans">
-                  <div>THE WEDDING OF</div>
-                </div>
-                <div className="w-full text-center text-4xl mt-4 overflow-hidden font-normal tracking-[.64px] flex items-center justify-center">
-                  <div>Naufal Alghifary</div>
-                </div>
-                <div className="w-full text-sm font-normal mt-4 text-center overflow-hidden font-commuters-sans">
-                  <div>AND</div>
-                </div>
-                <div className="w-full text-center text-4xl mt-4 overflow-hidden font-normal tracking-[.64px] flex items-center justify-center">
-                  <div>Sang Mempelai Wanita</div>
-                </div>
-                <div className="w-full text-sm font-normal text-center overflow-hidden font-commuters-sans">
-                  <div>28 . 04 . 2024</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="max-w-md relative">
-            <div className="m-auto left-0 right-0 mt-8 -mb-16 py-8 px-12">
-              <div className="minimalistMagazine_openingContainer__9u6yY __className_44b83f">
-                <div className="w-full flex flex-col gap-16 items-center justify-center">
-                  <div className="text-center text-3xl text-darker-grey">
-                    QS. Ar-Rum : 21
+          <div className="bg-white h-screen w-screen top-0 left-0 z-[112] flex justify-center items-center __className_81562d">
+            <div className="w-full h-screen max-w-md bg-beige relative">
+              <div className="flex flex-col items-center justify-center h-[40rem]">
+                <img
+                  src={graph2}
+                  alt="Logo"
+                  className="absolute top-0 left-0 object-cover h-screen w-screen object-left"
+                />
+                <div className="absolute z-[70] top-0 left-0 pt-24 w-full text-white">
+                  <div className="w-full text-sm font-normal text-center overflow-hidden font-commuters-sans">
+                    <div>THE WEDDING OF</div>
                   </div>
-                  <div className="text-center text-lg text-darker-grey">
-                    "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia
-                    menciptakan pasangan-pasangan untukmu dari jenismu sendiri,
-                    agar kamu cenderung dan merasa tenteram kepadanya, dan Dia
-                    menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada
-                    yang demikian itu benar-benar terdapat tanda-tanda
-                    (kebesaran Allah) bagi kaum yang berpikir."
+                  <div className="w-full text-center text-4xl mt-4 overflow-hidden font-normal tracking-[.64px] flex items-center justify-center">
+                    <div>Naufal Alghifary</div>
+                  </div>
+                  <div className="w-full text-sm font-normal mt-4 text-center overflow-hidden font-commuters-sans">
+                    <div>AND</div>
+                  </div>
+                  <div className="w-full text-center text-4xl mt-4 overflow-hidden font-normal tracking-[.64px] flex items-center justify-center">
+                    <div>Sang Mempelai Wanita</div>
+                  </div>
+                  <div className="w-full text-sm font-normal text-center overflow-hidden font-commuters-sans">
+                    <div>28 . 04 . 2024</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <SinglePhoto gender="wanita" ig="isi aja" name="wanita" />
-          <div className="absolute m-auto left-0 right-0 mt-14">
-            <div className="text-6xl font-great-vibes text-center">&</div>
+          <div className="bg-white w-screen top-0 left-0 z-[112] flex justify-center items-center __className_81562d">
+            <div className="max-w-md relative">
+              <div className="m-auto left-0 right-0 mt-8 -mb-32 py-8 px-12">
+                <div className="minimalistMagazine_openingContainer__9u6yY __className_44b83f">
+                  <div className="w-full flex flex-col gap-16 items-center justify-center">
+                    <div className="text-center text-3xl text-darker-grey">
+                      QS. Ar-Rum : 21
+                    </div>
+                    <div className="text-center text-lg text-darker-grey">
+                      "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia
+                      menciptakan pasangan-pasangan untukmu dari jenismu
+                      sendiri, agar kamu cenderung dan merasa tenteram
+                      kepadanya, dan Dia menjadikan di antaramu rasa kasih dan
+                      sayang. Sungguh, pada yang demikian itu benar-benar
+                      terdapat tanda-tanda (kebesaran Allah) bagi kaum yang
+                      berpikir."
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <SinglePhoto gender="pria" ig="isi aja" name="Naufal Alghifary" />
+          <div className="bg-white w-screen top-0 left-0 z-[112] flex justify-center items-center">
+            <div className="w-full max-w-md">
+              <div className="flex flex-col items-center justify-center">
+                <SinglePhoto gender="wanita" ig="isi aja" name="wanita" />
+                <div className="absolute m-auto left-0 right-0 mt-44">
+                  <div className="text-6xl font-great-vibes text-center">&</div>
+                </div>
+                <SinglePhoto
+                  gender="pria"
+                  ig="isi aja"
+                  name="Naufal Alghifary"
+                />
+              </div>
+            </div>
+          </div>
           <div
             className="pt-8 w-full"
             data-aos="fade-up"
@@ -241,7 +256,7 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
                 </div>
               )}
             />
-            <div className="minimalistMagazine_LocationDetailContainer__qK6qn __className_44b83f !text-darker-grey !bg-grayish-orange w-full">
+            <div className="minimalistMagazine_LocationDetailContainer__qK6qn !text-darker-grey !bg-grayish-orange w-full">
               <div className="h-full w-full flex flex-col justify-center items-center py-5">
                 <div className="px-6 py-8 w-full text-center flex flex-col items-center">
                   <div className="text-2xl font-lagunac text-center mb-10 magazine_LocationTitle__upeqi">
@@ -304,12 +319,16 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
               </div>
             </div>
           </div>
-          <div className="relative items-center">
-            <div className="text-2xl font-lagunac text-center">
-              <div>GALLERY</div>
+          <div className="w-screen top-0 left-0 z-[112] flex justify-center items-center">
+            <div className="w-full max-w-md">
+              <div className="flex flex-col items-center justify-center">
+                <div className="text-2xl font-lagunac text-center">
+                  <div>GALLERY</div>
+                </div>
+                <MixInfiniteMovingLayoutGrid cards={cards} />
+                {/* <ParallaxScroll images={images} /> */}
+              </div>
             </div>
-            <MixInfiniteMovingLayoutGrid cards={cards} />
-            {/* <ParallaxScroll images={images} /> */}
           </div>
         </motion.div>
       )}
