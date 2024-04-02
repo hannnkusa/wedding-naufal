@@ -46,7 +46,7 @@ const config: Config = {
         },
         scroll: {
           to: {
-            transform: "translate(calc(-50% - 8rem))",
+            transform: "translate(calc(-50% - 52rem))",
           },
         },
       },

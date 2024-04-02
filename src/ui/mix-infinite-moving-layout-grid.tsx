@@ -12,8 +12,8 @@ type Card = {
 
 export const MixInfiniteMovingLayoutGrid = ({
   cards,
-  direction = "left",
-  speed = "fast",
+  direction = "right",
+  speed = "slow",
   pauseOnHover = false,
   className,
 }: {
@@ -105,7 +105,7 @@ export const MixInfiniteMovingLayoutGrid = ({
         <div
           ref={scrollerRef}
           className={cn(
-            "flex min-w-full shrink-0 gap-64 w-max flex-nowrap items-center",
+            "flex min-w-full shrink-0 gap-[16rem] w-max flex-nowrap items-center",
             start && "animate-scroll ",
             pauseOnHover && "hover:[animation-play-state:paused]",
             selected?.id && "[animation-play-state:paused]"
@@ -115,7 +115,7 @@ export const MixInfiniteMovingLayoutGrid = ({
 
           {/* Start Layout Grid */}
           <div className="overflow-visible w-full max-w-md">
-            <div className="w-[48rem] h-screen p-10 grid grid-cols-3 mx-auto gap-4 ">
+            <div className="w-[48rem] h-screen p-10 grid grid-cols-3 mx-auto gap-4">
               {cards.map((card, i) => (
                 <div key={i} className={cn(card.className, "")}>
                   <motion.div
@@ -126,6 +126,56 @@ export const MixInfiniteMovingLayoutGrid = ({
                       selected?.id === card.id && selectedIndex === 0
                         ? "hidden"
                         : lastSelected?.id === card.id && selectedIndex === 0
+                        ? "z-40 bg-white rounded-xl h-full w-full"
+                        : "bg-white rounded-xl h-full w-full"
+                    )}
+                    layout
+                  >
+                    <BlurImage card={card} />
+                  </motion.div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* End Layout Grid */}
+          {/* Start Layout Grid */}
+          <div className="overflow-visible w-full max-w-md">
+            <div className="w-[48rem] h-screen p-10 grid grid-cols-3 mx-auto gap-4 ">
+              {cards.map((card, i) => (
+                <div key={i} className={cn(card.className, "")}>
+                  <motion.div
+                    onClick={() => handleClick(card, 1)}
+                    className={cn(
+                      card.className,
+                      "relative overflow-hidden",
+                      selected?.id === card.id && selectedIndex === 1
+                        ? "hidden"
+                        : lastSelected?.id === card.id && selectedIndex === 1
+                        ? "z-40 bg-white rounded-xl h-full w-full"
+                        : "bg-white rounded-xl h-full w-full"
+                    )}
+                    layout
+                  >
+                    <BlurImage card={card} />
+                  </motion.div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* End Layout Grid */}
+          {/* Start Layout Grid */}
+          <div className="overflow-visible w-full max-w-md">
+            <div className="w-[48rem] h-screen p-10 grid grid-cols-3 mx-auto gap-4 ">
+              {cards.map((card, i) => (
+                <div key={i} className={cn(card.className, "")}>
+                  <motion.div
+                    onClick={() => handleClick(card, 1)}
+                    className={cn(
+                      card.className,
+                      "relative overflow-hidden",
+                      selected?.id === card.id && selectedIndex === 1
+                        ? "hidden"
+                        : lastSelected?.id === card.id && selectedIndex === 1
                         ? "z-40 bg-white rounded-xl h-full w-full"
                         : "bg-white rounded-xl h-full w-full"
                     )}

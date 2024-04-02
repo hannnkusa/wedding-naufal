@@ -45,3 +45,14 @@ body {
     font-family: __Assistant_44b83f, __Assistant_Fallback_44b83f;
     font-style: normal
 }
+
+.minimalistMagazine_WishesCard__NW7F7 {
+    border-radius: .5rem;
+    padding: .5rem;
+    text-align: center;
+    font-size: .75rem;
+    line-height: 1rem;
+    background: rgba(0, 0, 0, .03);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px)
+}
