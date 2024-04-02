@@ -11,6 +11,11 @@ const config: Config = {
     extend: {
       fontFamily: {
         camorant: ['"Cormorant Upright"', "sans-serif"],
+        camorantInfant: ['"Cormorant Infant"', "sans-serif"],
+        cinzel: ['"Cinzel"', "serif"],
+        montserrat: ['"Montserrat"', "sans-serif"],
+        poppins: ['"Poppins"', "sans-serif"],
+        playfair: ['"Playfair Display"', "serif"],
       },
       animation: {
         shimmer: "shimmer 2s linear infinite",
