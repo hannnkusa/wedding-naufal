@@ -13,7 +13,7 @@ interface IntroScreenProps {
 
 export function IntroScreen({ isUnlocked, handleUnlock }: IntroScreenProps) {
   return (
-    <div className="w-full h-screen max-w-md bg-beige relative">
+    <div className="w-full h-screen max-w-5xl bg-beige relative">
       {!isUnlocked ? (
         <div className="flex flex-col items-center justify-center h-[40rem]">
           <img

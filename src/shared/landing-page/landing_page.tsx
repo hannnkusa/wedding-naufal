@@ -102,7 +102,7 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
     <div className="flex min-h-screen min-w-screen flex-col items-center justify-between overflow-hidden shadow-md __className_44b83f">
       {!isUnlocked ? (
         <div className="bg-white fixed h-screen w-screen top-0 left-0 z-[112] flex justify-center items-center __className_81562d">
-          <div className="w-full h-screen max-w-md bg-beige relative">
+          <div className="w-full h-screen max-w-5xl bg-beige relative">
             <div className="flex flex-col items-center justify-center h-[40rem]">
               <div className="absolute w-full bottom-0 left-0 z-[69] bg-beige"></div>
               <img
@@ -136,7 +136,7 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="bg-white h-screen w-screen top-0 left-0 z-[112] flex justify-center items-center __className_81562d">
-            <div className="w-full h-screen max-w-md bg-beige relative">
+            <div className="w-full h-screen max-w-5xl bg-beige relative">
               <div className="flex flex-col items-center justify-center h-[40rem]">
                 <img
                   src={graph2}
@@ -164,7 +164,7 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
             </div>
           </div>
           <div className="bg-white w-screen top-0 left-0 z-[112] flex justify-center items-center __className_81562d">
-            <div className="max-w-md relative">
+            <div className="max-w-5xl relative">
               <div className="m-auto left-0 right-0 mt-8 -mb-32 py-8 px-12">
                 <div className="minimalistMagazine_openingContainer__9u6yY __className_44b83f">
                   <div className="w-full flex flex-col gap-16 items-center justify-center">
@@ -333,7 +333,7 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
             </div>
           </div>
           <div className="w-screen top-0 left-0 z-[112] flex justify-center items-center">
-            <div className="w-full max-w-md">
+            <div className="w-full max-w-5xl">
               <div className="flex flex-col items-center justify-center">
                 <div className="text-4xl font-camorant text-center">
                   <div>GALLERY</div>
