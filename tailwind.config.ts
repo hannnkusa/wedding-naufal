@@ -9,6 +9,9 @@ const config: Config = {
       "great-vibes": ["Great Vibes", "cursive"],
     },
     extend: {
+      fontFamily: {
+        camorant: ['"Cormorant Upright"', "sans-serif"],
+      },
       animation: {
         shimmer: "shimmer 2s linear infinite",
         aurora: "aurora 60s linear infinite",
