@@ -146,6 +146,10 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
     togglePlay();
   };
 
+  function redirect(url: string) {
+    window.open(url, "_blank");
+  }
+
   return (
     <div className="flex min-h-screen min-w-screen flex-col items-center justify-between overflow-hidden shadow-md __className_44b83f">
       {!isUnlocked ? (
@@ -516,6 +520,31 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
               </div>
             </div>
           </section>
+          <div className="bg-white relative h-fit w-full overflow-hidden __className_0388d3">
+            <div className="flex flex-col h-full">
+              <img
+                className="object-cover object-center h-96 w-full"
+                src="/5.jpg"
+                alt="cute pic"
+              />
+              <div
+                className="absolute right-0 top-0 text-right p-14 flex flex-col justify-center items-center h-full"
+                style={{ opacity: 1, transform: "none" }}
+              >
+                <div className="text-white text-center text-xl text-darker-grey mb-12">
+                  QS. Ar-Rum : 21
+                </div>
+                <div className="text-white text-center text-md text-darker-grey">
+                  "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia
+                  menciptakan pasangan-pasangan untukmu dari jenismu sendiri,
+                  agar kamu cenderung dan merasa tenteram kepadanya, dan Dia
+                  menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada
+                  yang demikian itu benar-benar terdapat tanda-tanda (kebesaran
+                  Allah) bagi kaum yang berpikir."
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="group fixed bottom-3 left-0 p-3 flex items-end justify-start w-24 h-start z-50 ">
             <div
               onClick={togglePlay}
@@ -562,13 +591,16 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
         }}
         className="relative w-full text-white"
       >
-        <div className="px-5 mb-5 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
+        <div className="px-5 mb-5 flex w-full h-full flex flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
           <div className="mb-4 text-center 0 md:mb-0">
             <div className="text-xs">Crafted by</div>
             <div>Handy Kusuma</div>
           </div>
           <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
-            <div className="opacity-80 transition-opacity hover:opacity-100">
+            <div
+              className="opacity-80 transition-opacity hover:opacity-100"
+              onClick={() => redirect("https://www.instagram.com/hannnkusa/")}
+            >
               <svg
                 className="h-5 w-5"
                 fill="currentColor"
@@ -582,7 +614,10 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
                 />
               </svg>
             </div>
-            <div className="opacity-80 transition-opacity hover:opacity-100">
+            <div
+              className="opacity-80 transition-opacity hover:opacity-100"
+              onClick={() => redirect("https://github.com/hannnkusa")}
+            >
               <svg
                 className="h-5 w-5"
                 fill="currentColor"
