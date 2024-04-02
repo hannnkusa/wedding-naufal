@@ -98,7 +98,7 @@ export const MixInfiniteMovingLayoutGrid = ({
       <div
         ref={containerRef}
         className={cn(
-          "scroller relative z-20 max-w-md overflow-hidden items-center",
+          "scroller relative z-20 w-screen overflow-hidden items-center overflow-x-hidden overflow-y-auto",
           className
         )}
       >

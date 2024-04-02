@@ -37,7 +37,7 @@ export function SinglePhoto({
       <div className={cn("w-full relative")}>
         <motion.div style={{ scale, height: "auto" }}>
           <div className="minimalistMagazine_CoupleInfoContainer__zIVZY __className_44b83f">
-            <div className="h-full max-w-md w-full relative overflow-y-hidden overflow-x-hidden">
+            <div className="h-full max-w-5xl w-full relative overflow-y-hidden overflow-x-hidden">
               <div
                 className={cn(
                   "absolute top-0 left-0 z-10 w-full h-full flex flex-col items-center justify-between"
