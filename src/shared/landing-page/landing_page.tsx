@@ -71,6 +71,53 @@ const cards = [
   },
 ];
 
+const wishes = [
+  {
+    name: "Handy",
+    wish: "Lu olang mantab",
+  },
+  {
+    name: "Handy",
+    wish: "Lu olang mantab",
+  },
+  {
+    name: "Handy",
+    wish: "Lu olang mantab",
+  },
+  {
+    name: "Handy",
+    wish: "Lu olang mantab",
+  },
+  {
+    name: "Handy",
+    wish: "Lu olang mantab",
+  },
+  {
+    name: "Handy",
+    wish: "Lu olang mantab",
+  },
+  {
+    name: "Handy",
+    wish: "Lu olang mantab",
+  },
+  {
+    name: "Handy",
+    wish: "Lu olang mantab",
+  },
+  {
+    name: "Handy",
+    wish: "Lu olang mantab",
+  },
+  {
+    name: "Handy",
+    wish: "Lu olang mantab",
+  },
+  {
+    name: "Handy",
+    wish: "Lu olang mantab",
+  },
+];
+
 interface LandingPageProps {}
 
 const LandingPage: FunctionComponent<LandingPageProps> = () => {
@@ -269,7 +316,7 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
                 </div>
               )}
             />
-            <div className="minimalistMagazine_LocationDetailContainer__qK6qn !text-darker-grey !bg-grayish-orange w-full">
+            <div className="minimalistMagazine_LocationDetailContainer__qK6qn __className_44b83f relative text-navy bg-white">
               <div className="h-full w-full flex flex-col justify-center items-center py-5">
                 <div className="px-6 py-8 w-full text-center flex flex-col items-center">
                   <div className="text-2xl font-camorant font-bold text-center mb-4 magazine_LocationTitle__upeqi">
@@ -306,6 +353,34 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
                   </div>
                 </div>
               </div>
+              <div className="absolute -right-6 top-[13.5%] overflow-hidden">
+                {/* <img
+                  className="h-[166px] max-w-none -rotate-6 origin-right"
+                  src="https://res.cloudinary.com/drdikhiur/image/upload/v1707703806/contents/henri-jennifer/vectors/location-flower-right_pjbc7j.png"
+                  alt="flower"
+                /> */}
+                <motion.img
+                  className="h-[166px] max-w-none -rotate-6 origin-right"
+                  src="https://res.cloudinary.com/drdikhiur/image/upload/v1707703806/contents/henri-jennifer/vectors/location-flower-right_pjbc7j.png"
+                  alt="flower"
+                  animate={{
+                    rotate: [20, 0, -9, 0, 20],
+                  }}
+                  transition={{ repeat: Infinity, duration: 6 }}
+                />
+              </div>
+              <div className="flower absolute right-0 bottom-0 h-[15.31vh] z-0"></div>
+              <div className="absolute -left-14 bottom-[25%] overflow-hidden">
+                <motion.img
+                  className="h-[166px] max-w-none -rotate-6 origin-left"
+                  src="https://res.cloudinary.com/drdikhiur/image/upload/v1707703806/contents/henri-jennifer/vectors/location-flower-left_o29byj.png"
+                  alt="flower"
+                  animate={{
+                    rotate: [20, 0, -9, 0, 20],
+                  }}
+                  transition={{ repeat: Infinity, duration: 6 }}
+                />
+              </div>
             </div>
           </div>
           <div className="w-screen top-0 left-0 z-[112] flex justify-center items-center">
@@ -314,8 +389,9 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
                 <div className="text-4xl font-camorant text-center">
                   <div>GALLERY</div>
                 </div>
-                <MixInfiniteMovingLayoutGrid cards={cards} />
-                {/* <ParallaxScroll images={images} /> */}
+                <div className="relative">
+                  <MixInfiniteMovingLayoutGrid cards={cards} />
+                </div>
               </div>
             </div>
           </div>
@@ -340,7 +416,7 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
                 <SelectTrigger>
                   <SelectValue placeholder="Konfirmasi Kehadiran" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bottom-0">
                   <SelectItem value="Hadir">Hadir</SelectItem>
                   <SelectItem value="Tidak Hadir">Tidak Hadir</SelectItem>
                 </SelectContent>
@@ -353,12 +429,60 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
               </button>
             </form>
           </div>
+          <div className="bg-grayish-orange relative h-fit w-full pb-5 pt-20 px-5 z-[1] text-navy __className_0388d3">
+            <div className="flower absolute left-0 top-0 h-[15.31vh] z-0">
+              <img
+                className="h-full max-w-none opacity-70"
+                src="https://res.cloudinary.com/drdikhiur/image/upload/v1707710719/contents/henri-jennifer/vectors/wishes-flower-top_se0isg.png"
+                alt="dan"
+              />
+            </div>
+            <div className="py-5 flex flex-col items-center justify-start">
+              <div className="font-camorant text-4xl font-lagunac text-center">
+                WISHES
+              </div>
+              <div className="w-1/5 border-t-2 mt-2 mb-6 border-blue-950" />
+            </div>
+            <div className="relative" style={{ opacity: 1, transform: "none" }}>
+              <div
+                style={{ position: "inherit", zIndex: 2 }}
+                className="flex flex-col space-y-6 overflow-y-auto overflow-x-hidden max-h-96 no-scrollbar relative"
+              >
+                {wishes.map((wish) => (
+                  <div className="break-words rounded-lg minimalistMagazine_WishesCard__NW7F7">
+                    <div className="mb-3 text-xs font-medium flex gap-1 justify-center">
+                      <span className="font-bold">{wish.name}</span>
+                    </div>
+                    <div>
+                      {/* {wish.wish} */}
+                      Happy wedding bro Henri and Jennifer...akhirnya bro...
+                      best wish you all the best...
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="scroll-icon absolute bottom-[-25px] left-1/2 -translate-x-1/2 z-10 rotate-180">
+                <img
+                  className=" h-[40px]"
+                  src="https://www.sepasangselamanya.com/scroll-icon-gold.gif"
+                  alt="scroll-icon"
+                />
+              </div>
+            </div>
+            <div className="flower absolute right-0 bottom-0 h-[15.31vh] z-0">
+              <img
+                className="h-full max-w-none opacity-70"
+                src="https://res.cloudinary.com/drdikhiur/image/upload/v1707710719/contents/henri-jennifer/vectors/wishes-flower-bottom_fxymsf.png"
+                alt="flower"
+              />
+            </div>
+          </div>
           <section className="bg-grayish-orange relative h-fit w-screen pt-20 pb-5 px-5 z-[2] text-darker-grey">
             <div className="py-5 flex flex-col items-center justify-start">
               <div className="font-camorant text-4xl font-lagunac text-center">
                 Hadiah Pernikahan
               </div>
-              <div className="w-1/6 border-t-2 mt-2 mb-6 border-blue-950" />
+              <div className="w-1/5 border-t-2 mt-2 mb-6 border-blue-950" />
               <div className="text-sm text-center w-3/4">
                 Doa restu yang kami terima sangat berarti, namun jika memberi
                 merupakan tanda kasih, tentunya semakin melengkapi kebahagiaan
