@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { TextGenerateEffect } from "../../ui/text-generate-effect";
 import graph from "/1.jpeg";
 import graph2 from "/2.jpeg";
-import graph5 from "/5.jpg";
 import { MixInfiniteMovingLayoutGrid } from "../../ui/mix-infinite-moving-layout-grid";
 import Countdown from "react-countdown";
 import { SinglePhoto } from "../components/single_photo";
@@ -405,39 +404,46 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
               </div>
             </div>
           </div>
-          <div className="py-5 flex flex-col items-center justify-start">
-            <div className="font-camorant text-4xl text-center">RSVP</div>
-            <div className="w-1/12 border-t-2 mt-2 mb-10 border-blue-950" />
+          <div
+            // className="pt-8 w-full"
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="500"
+          >
+            <div className="py-5 flex flex-col items-center justify-start">
+              <div className="font-camorant text-4xl text-center">RSVP</div>
+              <div className="w-1/12 border-t-2 mt-2 mb-10 border-blue-950" />
 
-            <form className="w-screen px-5">
-              <Input
-                className="mb-4"
-                id="name"
-                placeholder="Nama"
-                type="text"
-              />
-              <Textarea
-                className="mb-4 resize-none"
-                id="wishes"
-                placeholder="Ucapan"
-                rows={8}
-              />
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Konfirmasi Kehadiran" />
-                </SelectTrigger>
-                <SelectContent className="bottom-0">
-                  <SelectItem value="Hadir">Hadir</SelectItem>
-                  <SelectItem value="Tidak Hadir">Tidak Hadir</SelectItem>
-                </SelectContent>
-              </Select>
-              <button
-                className="text-xs mt-4 bg-gradient-to-br relative group/btn from-[#343650] to-[#343650] block w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-                type="submit"
-              >
-                Berikan Ucapan
-              </button>
-            </form>
+              <form className="w-screen px-5">
+                <Input
+                  className="mb-4"
+                  id="name"
+                  placeholder="Nama"
+                  type="text"
+                />
+                <Textarea
+                  className="mb-4 resize-none"
+                  id="wishes"
+                  placeholder="Ucapan"
+                  rows={8}
+                />
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Konfirmasi Kehadiran" />
+                  </SelectTrigger>
+                  <SelectContent className="bottom-0">
+                    <SelectItem value="Hadir">Hadir</SelectItem>
+                    <SelectItem value="Tidak Hadir">Tidak Hadir</SelectItem>
+                  </SelectContent>
+                </Select>
+                <button
+                  className="font-poppins text-xs mt-4 bg-gradient-to-br relative group/btn from-[#343650] to-[#343650] block w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+                  type="submit"
+                >
+                  Berikan Ucapan
+                </button>
+              </form>
+            </div>
           </div>
           <div className="bg-grayish-orange relative h-fit w-full pb-5 pt-20 px-5 z-[1] text-navy __className_0388d3">
             <div className="flower absolute left-0 top-0 h-[15.31vh] z-0">
@@ -447,79 +453,96 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
                 alt="dan"
               />
             </div>
-            <div className="py-5 flex flex-col items-center justify-start">
-              <div className="font-camorant text-4xl font-lagunac text-center">
-                WISHES
+            <div
+              // className="pt-8 w-full"
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="500"
+            >
+              <div className="py-5 flex flex-col items-center justify-start">
+                <div className="font-camorant text-4xl font-lagunac text-center">
+                  WISHES
+                </div>
+                <div className="w-1/5 border-t-2 mt-2 mb-6 border-blue-950" />
               </div>
-              <div className="w-1/5 border-t-2 mt-2 mb-6 border-blue-950" />
-            </div>
-            <div className="relative" style={{ opacity: 1, transform: "none" }}>
               <div
-                style={{ position: "inherit", zIndex: 2 }}
-                className="flex flex-col space-y-6 overflow-y-auto overflow-x-hidden max-h-96 no-scrollbar relative"
+                className="relative"
+                style={{ opacity: 1, transform: "none" }}
               >
-                {wishes.map((wish) => (
-                  <div className="break-words rounded-lg minimalistMagazine_WishesCard__NW7F7">
-                    <div className="mb-3 text-xs font-medium flex gap-1 justify-center">
-                      <span className="font-bold">{wish.name}</span>
+                <div
+                  style={{ position: "inherit", zIndex: 2 }}
+                  className="flex flex-col space-y-6 overflow-y-auto overflow-x-hidden max-h-96 no-scrollbar relative"
+                >
+                  {wishes.map((wish) => (
+                    <div className="break-words rounded-lg minimalistMagazine_WishesCard__NW7F7">
+                      <div className="mb-3 text-xs font-medium flex gap-1 justify-center">
+                        <span className="font-bold">{wish.name}</span>
+                      </div>
+                      <div>
+                        {wish.wish}
+                        {/* Happy wedding bro Henri and Jennifer...akhirnya bro...
+                      best wish you all the best... */}
+                      </div>
                     </div>
-                    <div>
-                      {/* {wish.wish} */}
-                      Happy wedding bro Henri and Jennifer...akhirnya bro...
-                      best wish you all the best...
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+                <div className="scroll-icon absolute bottom-[-25px] left-1/2 -translate-x-1/2 z-10 rotate-180">
+                  <img
+                    className=" h-[40px]"
+                    src="https://www.sepasangselamanya.com/scroll-icon-gold.gif"
+                    alt="scroll-icon"
+                  />
+                </div>
               </div>
-              <div className="scroll-icon absolute bottom-[-25px] left-1/2 -translate-x-1/2 z-10 rotate-180">
+              <div className="flower absolute right-0 bottom-0 h-[15.31vh] z-0">
                 <img
-                  className=" h-[40px]"
-                  src="https://www.sepasangselamanya.com/scroll-icon-gold.gif"
-                  alt="scroll-icon"
+                  className="h-full max-w-none opacity-70"
+                  src="https://res.cloudinary.com/drdikhiur/image/upload/v1707710719/contents/henri-jennifer/vectors/wishes-flower-bottom_fxymsf.png"
+                  alt="flower"
                 />
               </div>
             </div>
-            <div className="flower absolute right-0 bottom-0 h-[15.31vh] z-0">
-              <img
-                className="h-full max-w-none opacity-70"
-                src="https://res.cloudinary.com/drdikhiur/image/upload/v1707710719/contents/henri-jennifer/vectors/wishes-flower-bottom_fxymsf.png"
-                alt="flower"
-              />
-            </div>
           </div>
-          <section className="bg-grayish-orange relative h-fit w-screen pt-20 pb-5 px-5 z-[2] text-darker-grey">
-            <div className="py-5 flex flex-col items-center justify-start">
-              <div className="font-camorant text-4xl text-center">
-                Hadiah Pernikahan
+          <div
+            // className="pt-8 w-full"
+            data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="500"
+          >
+            <section className="bg-grayish-orange relative h-fit w-screen pt-20 pb-5 px-5 z-[2] text-darker-grey">
+              <div className="py-5 flex flex-col items-center justify-start">
+                <div className="font-camorant text-4xl text-center">
+                  Hadiah Pernikahan
+                </div>
+                <div className="w-1/5 border-t-2 mt-2 mb-6 border-blue-950" />
+                <div className="text-sm text-center w-3/4">
+                  Doa restu yang kami terima sangat berarti, namun jika memberi
+                  merupakan tanda kasih, tentunya semakin melengkapi kebahagiaan
+                  kami.
+                </div>
+                <div
+                  className="w-[350px] text-center mt-8 max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px]"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, var(--slate-700), var(--slate-800)",
+                  }}
+                >
+                  <blockquote>
+                    <div className="mb-3 relative z-20 text-sm leading-[1.6] text-gray-100 font-normal">
+                      BCA
+                    </div>
+                    <div className="font-normal relative z-20 text-sm leading-[1.6] text-gray-100">
+                      8455780141
+                    </div>
+                    <div className="font-semibold relative z-20 text-sm leading-[1.6] text-gray-100">
+                      <span className="font-thin">a.n </span>
+                      Aziza Ayu Nurjannah
+                    </div>
+                  </blockquote>
+                </div>
               </div>
-              <div className="w-1/5 border-t-2 mt-2 mb-6 border-blue-950" />
-              <div className="text-sm text-center w-3/4">
-                Doa restu yang kami terima sangat berarti, namun jika memberi
-                merupakan tanda kasih, tentunya semakin melengkapi kebahagiaan
-                kami.
-              </div>
-              <div
-                className="w-[350px] text-center mt-8 max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px]"
-                style={{
-                  background:
-                    "linear-gradient(180deg, var(--slate-700), var(--slate-800)",
-                }}
-              >
-                <blockquote>
-                  <div className="mb-3 relative z-20 text-sm leading-[1.6] text-gray-100 font-normal">
-                    BCA
-                  </div>
-                  <div className="font-normal relative z-20 text-sm leading-[1.6] text-gray-100">
-                    8455780141
-                  </div>
-                  <div className="font-semibold relative z-20 text-sm leading-[1.6] text-gray-100">
-                    <span className="font-thin">a.n </span>
-                    Aziza Ayu Nurjannah
-                  </div>
-                </blockquote>
-              </div>
-            </div>
-          </section>
+            </section>
+          </div>
           <div className="bg-white relative h-fit w-full overflow-hidden __className_0388d3">
             <div className="flex flex-col h-full">
               <img
@@ -591,10 +614,11 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
         }}
         className="relative w-full text-white"
       >
-        <div className="px-5 mb-5 flex w-full h-full flex flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
+        <div className="px-5 mb-5 flex w-full h-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
           <div className="mb-4 text-center 0 md:mb-0">
-            <div className="text-xs">Crafted by</div>
-            <div>Handy Kusuma</div>
+            <div className="text-xs mb-3">Crafted by</div>
+            <div className="font-cinzel mb-2">Handy Kusuma</div>
+            <div className="font-cinzel">Naufal Al Giffary</div>
           </div>
           <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
             <div
