@@ -17,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../ui/select";
+import useRSVPForm, { type RSVPType } from "../../lib/useRSVPForm";
 
 const words = "Family and Friends";
 
@@ -71,53 +72,6 @@ const cards = [
   },
 ];
 
-const wishes = [
-  {
-    name: "Handy",
-    wish: "Lu olang mantab",
-  },
-  {
-    name: "Handy",
-    wish: "Lu olang mantab",
-  },
-  {
-    name: "Handy",
-    wish: "Lu olang mantab",
-  },
-  {
-    name: "Handy",
-    wish: "Lu olang mantab",
-  },
-  {
-    name: "Handy",
-    wish: "Lu olang mantab",
-  },
-  {
-    name: "Handy",
-    wish: "Lu olang mantab",
-  },
-  {
-    name: "Handy",
-    wish: "Lu olang mantab",
-  },
-  {
-    name: "Handy",
-    wish: "Lu olang mantab",
-  },
-  {
-    name: "Handy",
-    wish: "Lu olang mantab",
-  },
-  {
-    name: "Handy",
-    wish: "Lu olang mantab",
-  },
-  {
-    name: "Handy",
-    wish: "Lu olang mantab",
-  },
-];
-
 interface LandingPageProps {}
 
 const LandingPage: FunctionComponent<LandingPageProps> = () => {
@@ -148,6 +102,17 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
   function redirect(url: string) {
     window.open(url, "_blank");
   }
+
+  const {
+    addData,
+    RSVPList,
+    personName,
+    personWish,
+    attendance,
+    handleNameChange,
+    handleWishChange,
+    handleAttendanceChange,
+  } = useRSVPForm();
 
   return (
     <div className="flex min-h-screen min-w-screen flex-col items-center justify-between overflow-hidden shadow-md __className_44b83f">
@@ -420,14 +385,21 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
                   id="name"
                   placeholder="Nama"
                   type="text"
+                  value={personName}
+                  onChange={handleNameChange}
                 />
                 <Textarea
                   className="mb-4 resize-none"
                   id="wishes"
                   placeholder="Ucapan"
                   rows={8}
+                  value={personWish}
+                  onChange={handleWishChange}
                 />
-                <Select>
+                <Select
+                  onValueChange={handleAttendanceChange}
+                  value={attendance}
+                >
                   <SelectTrigger>
                     <SelectValue placeholder="Konfirmasi Kehadiran" />
                   </SelectTrigger>
@@ -438,7 +410,8 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
                 </Select>
                 <button
                   className="font-poppins text-xs mt-4 bg-gradient-to-br relative group/btn from-[#343650] to-[#343650] block w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-                  type="submit"
+                  type="button"
+                  onClick={addData}
                 >
                   Berikan Ucapan
                 </button>
@@ -473,7 +446,7 @@ const LandingPage: FunctionComponent<LandingPageProps> = () => {
                   style={{ position: "inherit", zIndex: 2 }}
                   className="flex flex-col space-y-6 overflow-y-auto overflow-x-hidden max-h-96 no-scrollbar relative"
                 >
-                  {wishes.map((wish) => (
+                  {RSVPList.map((wish) => (
                     <div className="break-words rounded-lg minimalistMagazine_WishesCard__NW7F7">
                       <div className="mb-3 text-xs font-medium flex gap-1 justify-center">
                         <span className="font-bold">{wish.name}</span>

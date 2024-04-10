@@ -19,6 +19,7 @@
     "@types/aos": "^3.0.7",
     "aos": "^2.3.4",
     "clsx": "^2.1.0",
+    "firebase": "^10.10.0",
     "framer-motion": "^11.0.14",
     "fullpage.js": "^4.0.22",
     "lucide-react": "^0.363.0",
