@@ -24,7 +24,6 @@ export default function useRSVPForm() {
   };
 
   const handleAttendanceChange = (value: string) => {
-    console.log(value);
     setAttendance(value);
   };
 
