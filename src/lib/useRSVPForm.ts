@@ -1,6 +1,9 @@
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import { db } from "./firebase";
 import { useEffect, useState } from "react";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 
 export type RSVPType = {
   name: string;
@@ -10,46 +13,60 @@ export type RSVPType = {
 
 export default function useRSVPForm() {
   const [RSVPList, setRSVPList] = useState<RSVPType[]>([]);
-  const [personName, setPersonName] = useState("");
-  const [personWish, setPersonWish] = useState("");
-  const [attendance, setAttendance] = useState("");
 
-  // Handler functions to update state
-  const handleNameChange = (event: any) => {
-    setPersonName(event.target.value);
-  };
+  const formSchema = z.object({
+    name: z.string().min(1, {
+      message: "*Nama wajib diisi",
+    }),
+    wish: z.string().min(1, {
+      message: "*Ucapan wajib diisi",
+    }),
+    attendance: z.string().min(1, {
+      message: "*Konfirmasi kehadiran wajib diisi",
+    }),
+  });
 
-  const handleWishChange = (event: any) => {
-    setPersonWish(event.target.value);
-  };
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      wish: "",
+      attendance: "",
+    },
+  });
 
-  const handleAttendanceChange = (value: string) => {
-    setAttendance(value);
-  };
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const resetForm = () => {
-    setPersonName("");
-    setPersonWish("");
-    setAttendance("");
-  };
-
-  async function addData() {
-    const payload: RSVPType = {
-      name: personName,
-      wish: personWish,
-      attendance: attendance === "Hadir",
-    };
-    await addDoc(collection(db, "rsvp"), payload);
-    resetForm();
-    getList();
+  async function addData(data: any) {
+    setIsLoading(true);
+    try {
+      const payload: RSVPType = {
+        name: data?.name,
+        wish: data?.wish,
+        attendance: data?.attendance === "Hadir",
+      };
+      await addDoc(collection(db, "rsvp"), payload);
+      form.reset();
+      getList();
+      setIsLoading(false);
+      setIsSuccess(true);
+    } catch (error) {
+      console.error(error);
+      setIsLoading(false);
+    }
   }
 
   const getList = async () => {
-    const querySnapshot = await getDocs(collection(db, "rsvp"));
-    setRSVPList([]);
-    querySnapshot.forEach((doc) => {
-      setRSVPList((currentData: any) => [...currentData, doc.data()]);
-    });
+    try {
+      const querySnapshot = await getDocs(collection(db, "rsvp"));
+      setRSVPList([]);
+      querySnapshot.forEach((doc) => {
+        setRSVPList((currentData: any) => [...currentData, doc.data()]);
+      });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
@@ -59,11 +76,8 @@ export default function useRSVPForm() {
   return {
     addData,
     RSVPList,
-    personName,
-    personWish,
-    attendance,
-    handleNameChange,
-    handleWishChange,
-    handleAttendanceChange,
+    isLoading,
+    isSuccess,
+    form,
   };
 }
